@@ -6,7 +6,21 @@ import datetime
 hora = datetime.now()
 
 
-bp_cadastro = Blueprint('cadastro',__name__)
+bp_cadastro = Blueprint('cadastro', __name__)
+
+login = input("digite seu email," "entrada")
+
+
+if login != self.email:
+    return bs.jsonify(cadastro, hora)
+else:
+    print("Entrada")
+    return(hora)
+    login = input("digite seu email," "Saida")
+return bs.jsonify(result, hora)
+    
+    
+
 
 @bp_cadastro.route('/mostrar', methods=['GET'])
 def mostrar():
@@ -16,7 +30,7 @@ def mostrar():
     return bs.jsonify(result, hora), 200
     
 
-@bp_cadastro.route('/cadastrar', methods=['GET'])
+@bp_cadastro.route('/cadastrar', methods=['POST'])
 def cadastrar():
     bs = CadasSchema()
     cadastro, error = bs.load(request.json)
